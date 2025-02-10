@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="login-container p-4 shadow rounded">
+                    <h2 class="text-center mb-4">Login</h2>
+                    <form id="loginForm" onsubmit="return validateLogin()">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" class="form-control" required>
+                            <small class="error-message text-danger"></small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control" required>
+                            <small class="error-message text-danger"></small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="calculator-container p-4 shadow rounded">
+                    <h2 class="text-center mb-3">Calculator</h2>
+                    <input type="text" id="display" class="form-control mb-2 text-end" disabled>
+                    <div class="row g-2">
+                        <div class="col-3"><button class="btn btn-danger w-100" onclick="clearDisplay()">C</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('7')">7</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('8')">8</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('9')">9</button></div>
+
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('/')">/</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('4')">4</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('5')">5</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('6')">6</button></div>
+
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('*')">*</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('1')">1</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('2')">2</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('3')">3</button></div>
+
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('-')">-</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('0')">0</button></div>
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('.')">.</button></div>
+                        <div class="col-3"><button class="btn btn-primary w-100" onclick="calculateResult()">=</button></div>
+
+                        <div class="col-3"><button class="btn btn-light w-100" onclick="appendToDisplay('+')">+</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
